@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>Register</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script>
+function chk(theForm){
+	var n=document.getElementById("n").value;
+	var l=document.getElementById("l").value;
+	var p=document.getElementById("p").value;
+	var q = document.getElementById('q')[document.getElementById('q').selectedIndex].innerHTML;
+	var a=document.getElementById("a").value;
+	var d = document.getElementById('d')[document.getElementById('d').selectedIndex].innerHTML;
+	if(n=="")
+	{
+		alert("Name Can't be Empty");
+		return false;
+	}
+	if(l=="")
+	{
+		alert("Email_Id Can't be Empty");
+		return false;
+	}
+	if(p=="")
+	{
+		alert("Password Can't be Empty");
+		return false;
+	}
+	if(d=="Select")
+	{
+		alert("Select Your Department");
+		return false;
+	}
+
+	if(q=="Select Question")
+	{
+		alert("Security Question Can't be Empty");
+		return false;
+	}
+	if(a=="")
+	{
+		alert("Security Answer Can't be Empty");
+		return false;
+	}
+	}
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">Passouts 2012</a></h1>
+		</div>
+	</div>
+	<div id="menu">
+		
+		<br class="clearfix" />
+	</div>
+	<div id="page">
+		<div id="content">
+			<div class="box" align="center">
+				<h2>Welcome to 2012 Passouts YearBook</h2>
+                                <form action="register.php" method="get" onsubmit="return chk(this);">
+                                    <table cellspacing="15" cellpadding="5" style="background: ghostwhite">
+                                        <tr>
+                                            <td style="font-family: cursive;font-size: larger;"><b>Register Here</b></td>
+                                            <td></td>
+                                        </tr>
+										<tr>
+                                            <td>NAME :</td>
+                                            <td><input type="text" name="selectname" id="n" value="" style="width: 300px;height: 30px;font-size: large;" /><br />(wrte full name because this can't be changed and this is how people will identify you.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>EMAIL_ID :</td>
+                                            <td><input type="text" name="selectloginid" id="l" value="" style="width: 300px;height: 30px;font-size: large;" /><br />(this will be your login id/username)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PASSWORD :</td>
+                                            <td><input type="password" name="selectloginpassword" id="p" value="" style="width: 300px;height: 30px;font-size: large;" /></td>
+                                        </tr>
+										<tr>
+                                            <td>DEPARTMENT :</td>
+                                            <td>
+												<select name="selectdepartment" id="d" style="width: 200px;height: 25px;font-size: large;">
+													<option>Select</option>
+													<option>CSE</option>
+													<option>ECE</option>
+													<option>EE</option>
+													<option>CE</option>
+												</select>
+												<br />(choose carefully because this can't be changed later)
+											</td>
+                                        </tr>
+										<tr>
+                                            <td>ENTER QUESTION :</td>
+                                            <td>
+												<select name="selectsecurityquestion" id="q" value="" style="width: 300px;height: 30px;font-size: large;">
+													<option>Select Question</option>
+													<option>What is your 1st phone no.?</option>
+													<option>What is your mothers maiden name?</option>
+													<option>What is your first school?</option>
+													<option>Who was your inspiration?</option>
+													<option>Whom you consider as best teacher?</option>
+												</select>
+											</td>
+                                        </tr>
+										<tr>
+                                            <td>ENTER ANSWER :</td>
+                                            <td><input type="password" name="selectsecurityanswer" id="a" value="" style="width: 300px;height: 30px;font-size: large;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="submit" value="REGISTER" style="background-color: gray;color: white;border: gray;font-size: large;padding: 5px 5px 5px 5px;border-style: outset;"/></td>
+                                        </tr>
+                                </table>
+                                </form>
+			</div>
+			<br class="clearfix" />
+		</div>
+		
+		<br class="clearfix" />
+	</div>
+	<div id="page-bottom">
+		<p align="center"><a>Compiled & Designed by Sandeep Kumar Gupta CSE Department</a></p>
+		<br class="clearfix" />
+	</div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>

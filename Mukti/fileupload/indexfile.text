@@ -1,0 +1,142 @@
+<?php
+include('connect.php');
+
+if(isset($_FILES['files'])){
+	$res =  upload_multiple_file($_FILES['files'],"upload");
+	echo $res;
+	}
+
+
+function upload_multiple_file($file,$file_dir="user_files") {
+
+	$overwrite=0;
+	$allowed_file_type= array("pdf","ppt","pptx","xls"."xlxs","doc","docx","jpg", "jpeg", "png", "gif");
+	$max_file_size = 2097152;
+
+	 foreach($_FILES['files']['name'] as $fkey=> $fname){
+	  
+		 $ext = pathinfo($fname, PATHINFO_EXTENSION);
+		   if (!in_array($ext, $allowed_file_type)) {
+		   
+			   return "unsupported file format";
+				break;
+		   }
+	  
+	 
+	 }
+
+	foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
+		
+				
+		$file_name = $_FILES['files']['name'][$key];
+		
+		
+		$file_size =$_FILES['files']['size'][$key];
+		
+		
+		$file_tmp_name =$_FILES['files']['tmp_name'][$key];
+		
+		
+		$file_type=$_FILES['files']['type'][$key];
+
+		
+       /*  if($max_file_size_check >0) {
+			if($file_size > $max_file_size){
+			
+				$fsize=$max_file_size/1048576;
+				return	'File size must be less than '.$fsize.' MB';
+				break;
+		  
+			}
+		} */
+		
+     
+        if(is_dir($file_dir)==false){
+			
+              $status =  mkdir("$file_dir", 0700);	
+               
+               if($status < 1){
+                     
+					 return "unable to create  diractory $file_dir ";
+					 
+                }			   
+            
+		}
+			
+		if(is_dir($file_dir)){
+			
+			if($overwrite < 1){
+			  
+			    move_uploaded_file($file_tmp_name,"$file_dir/".$file_name);
+			 
+			}
+			 
+		}
+		//  $file_upload_query="INSERT into user_uploads (`u_id`,`file_name`,`file_type`) VALUES('$user_id','$file_name','$file_size','$file_type'); ";
+		//mysql_query($file_upload_query);	
+     if(isset($_REQUEST['action']) && $_REQUEST['action']=='insert')
+      {
+			
+	$fname=$_POST['fname'];
+	$lname=$_POST['lname'];
+ 	$ABN=$_POST['ABN'];
+	$Drivers_licence_number=$_POST['Drivers_licence_number'];
+	$Drivers_licence_exp_date=$_POST['Drivers_licence_exp_date'];
+	$Authority_number=$_POST['Authority_number'];
+	$Authority_exp_date=$_POST['Authority_exp_date'];
+	$Home_phone=$_POST['Home_phone'];
+	$Mobile=$_POST['Mobile'];
+	$Email=$_POST['Email'];
+	$Password=$_POST['Password'];
+	$add=$_POST['add'];
+
+	$sql=mysql_query("insert into `tbl_driver` (`Firstname`,`Lastname`,`ABN`,`Drivers_licence_number`,`Drivers_licence_exp_date`,`Authority_number`,`Authority_exp_date`,`Home_phone`,`Mobile`,`Email`,`Password`,`Address`,`file_name`,`file_type`,`file_size`) values 
+	('$fname','$lname','$ABN','$Drivers_licence_number','$Drivers_licence_exp_date','$Authority_number','$Authority_exp_date','$Home_phone','$Mobile','$Email','$Password','$add','$file_name','$file_type','$file_size')") or die(mysql_error());
+		
+	} 	
+	
+   }
+		return "Successfully uploaded";
+	
+}
+ 
+
+?>
+
+
+<form action="" name="form" method="post" enctype="multipart/form-data">
+<input type="hidden" name="action" value="insert" />
+<table>
+<tr>
+ <td><b>First name:</b></td> <td><input type="text" name="fname" value="" align="middle" style="background: #CCCCCC"/></td></tr>
+ <tr>
+ <td><b>Last name:</b></td>  <td><input type="text" name="lname" value="" align="middle" style="background: #CCCCCC"/></td></tr> 
+ <tr>
+ <td><b>ABN</b></td>    <td><input type="text" name="ABN" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+ <tr>
+ <td><b>Drivers licence number:</b></td>    <td><input type="text" name="Drivers_licence_number" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+ <tr>
+ <td><b>Drivers licence exp date:</b></td>    <td><input type="text" name="Drivers_licence_exp_date" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+ <tr>
+ <td><b>Authority number:</b></td>    <td><input type="text" name="Authority_number" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+ <tr>
+ <td><b>Authority exp date:</b></td>    <td><input type="text" name="Authority_exp_date" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+ <tr>
+ <td><b>Home_phone:</b></td>    <td><input type="text" name="Home_phone" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+  <tr>
+ <td><b>Mobile:</b></td>    <td><input type="text" name="Mobile" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+  <tr>
+ <td><b>Email:</b></td>    <td><input type="text" name="Email" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+  <tr>
+ <td><b>Password:</b></td>    <td><input type="text" name="Password" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+ <tr>
+ <td><b>Address:</b></td>    <td><input type="text" name="add" value="" align="middle" style="background: #CCCCCC"/></td> </tr>
+ 
+ <tr>
+ <td><b>Upload DL:</b></td>  <td><input type="file" name="files[]" multiple/> </td> </tr>
+ <tr>
+ <td><b>Upload authority:</b></td>  <td><input type="file" name="files[]" multiple/></td> </tr>
+ 
+</table>
+ <input type="submit" value="Submit" name="submit"/>
+ </form>

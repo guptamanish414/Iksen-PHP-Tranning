@@ -1,0 +1,1 @@
+http://techstream.org/Web-Development/PHP/Multiple-File-Upload-with-PHP-and-MySQL

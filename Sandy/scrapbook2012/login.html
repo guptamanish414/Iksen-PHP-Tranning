@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Login</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script>
+	function fpshow()
+	{
+	document.getElementById("fp").style.display = "table";
+	document.getElementById("login").style.display = "none";
+	}
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">Passouts 2012</a></h1>
+		</div>
+	</div>
+	<div id="menu">
+		
+		<br class="clearfix" />
+	</div>
+	<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>Welcome to 2012 Passouts YearBook</h2>
+                                <p>
+                                    This YearBook is for the Computer Science & Engineering Department, Electronics & Communication Department, Electrical Engineering Department and Civil Engineering Department passing out students of 2012 of Hooghly Engineering & Technology College.
+                                </p>
+                                <p style="font-family: sans-serif;font-size: large;color: red;">First time visitor and 2012 Passout from HETC : <a href="register.html">Create Your Page</a></p>
+                                <p><strong style="font-family: sans-serif;font-size: large;">Enter your username and password to browse the YearBook -</strong></p>
+                                
+								<form action="login.php" method="post">
+                                    <table cellspacing="15" cellpadding="5" style="background: ghostwhite" id="login">
+                                        <tr>
+                                            <td style="font-family: cursive;font-size: larger;"><b>Log In</b></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>USERNAME :</td>
+                                            <td><input type="text" name="loginid" value="" style="width: 200px;height: 30px;font-size: large;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>PASSWORD :</td>
+                                            <td><input type="password" name="loginpassword" value="" style="width: 200px;height: 30px;font-size: large;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td align="right"><input type="submit" value="LOGIN " style="background-color: gray;color: white;border: gray;font-size: large;padding: 5px 5px 5px 5px;border-style: outset;"/></td>
+                                        </tr>
+										<tr>
+											<td></td>
+											<td align="right"><a href="javascript: fpshow();">forgot password ?</a></td>
+										</tr>
+                                </table>
+                                </form>
+								
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<form action="forgotpassword.php" method="post">
+                                    <table cellspacing="15" cellpadding="5" style="background: ghostwhite;display: none;" id="fp">
+                                        <tr>
+                                            <td style="font-family: cursive;font-size: larger;"><b>Forgot Password</b></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>USERNAME :</td>
+                                            <td><input type="text" name="floginid" value="" style="width: 200px;height: 30px;font-size: large;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td align="right"><input type="submit" value="Forgot Password" style="background-color: gray;color: white;border: gray;font-size: large;padding: 5px 5px 5px 5px;border-style: outset;"/></td>
+                                        </tr>
+                                </table>
+								<input type="hidden" value="0" name="flag">
+								<input type="hidden" value="" name="ans">
+                                </form>
+								
+								
+			</div>
+			<br class="clearfix" />
+		</div>
+		
+		<br class="clearfix" />
+	</div>
+	<div id="page-bottom">
+		<p align="center"><a>Compiled & Designed by Sandeep Kumar Gupta CSE Department</a></p>
+		<br class="clearfix" />
+	</div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>

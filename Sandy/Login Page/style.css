@@ -1,0 +1,23 @@
+#header{
+height:75px;
+background:#999999;
+border:medium;
+font-size:25px;
+font-family:"Courier New", Courier, monospace;
+}
+#content{
+height:650px;
+background:#999999;
+border:medium;
+font-size:25px;
+font-family:"Courier New", Courier, monospace;
+}
+#button{
+border:hidden;
+background-color:#333333;
+color:#FFFFFF;
+width:70px;
+height:35px;
+font-size:18px;
+font-family:Geneva, Arial, Helvetica, sans-serif;
+}

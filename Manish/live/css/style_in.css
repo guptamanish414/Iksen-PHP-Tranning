@@ -1,0 +1,36 @@
+body{background-color:#000000;}
+.main_container{margin:auto; font-size:12px; font-family:"Times New Roman"; color:#333333; width:1000px;}
+.header_left{height:120px; background:url(../images/header_left.jpg) no-repeat 0% 50%;}
+.header_right{height:120px; background:url(../images/header_right.jpg) no-repeat 100% 50%;}
+.header_middle{height:120px; background:url(../images/header_middle.jpg) repeat-x; margin:0px 33px 0px 33px;}
+.heading1{font:Arial, Helvetica, sans-serif; font-size:30px; color:#218DFB; font-weight:bold; text-align:center;}
+.left{width:180px; min-height:402px; background:url(../images/left_back.jpg) repeat; float:left; border-radius:6px;}
+.left_menu1{width:175px; height:auto; float:left; margin:auto; clear:both;}
+.menu_main{background:#7F2AFF; min-height:26px; list-style-type:none; margin-top:5px; border-radius:10px; color:#FFFFFF; font-size:16px; text-align:center; list-style:none; cursor:pointer; font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
+
+.sub_menu{font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif; background:#333333; text-align:left;}
+.sub_menu a{text-decoration:none; line-height:25px; color:#FFFFFF;}
+.sub_menu a:hover{color:#2AFF55;}
+
+.right{background:#000000; float:left; width:820px;}
+.area{ margin:5px 0px 5px 5px; min-height:390px; border:#1F1F1F solid 1px; border-radius:6px; background:#FFFFFF url(../images/flashmo_242_bg.jpg) top center;}
+.content{margin:8px 8px 8px 8px; border:#CCCCCC ridge 1px; border-radius:6px; min-height:375px;}
+.clear{ clear:both;}
+.footer{ height:60px; background:url(../images/footer.jpg);}
+
+.form_table{margin-top:10px;}
+.form_table tr td{ color:#333333; font-size:14px; font-family:"Times New Roman", Times, serif; font-weight:bold;}
+.form_table tr td .in_box{width:200px; border-radius:4px; background:#CCCCCC; height:20px;}
+.form_table tr td select{width:200px; line-height:20px; background:#CCCCCC; border-radius:4px;}
+.form_table tr td textarea{width:200px; background:#CCCCCC; border-radius:4px;}
+.submit_btn{background:#6666FF fixed; border-radius:6px; width:95px; height:30px; color:#FFFFFF; font-weight:bold;}
+.session_div{height:30px; background:#FFCCCC; color:#00CC33; font-style:italic; margin:5px 5px 5px 5px; line-height:28px; font-size:16px; font-weight:bold;}
+
+
+
+
+
+
+
+
+
